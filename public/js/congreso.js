@@ -666,7 +666,7 @@ var CONGRESO = (function(jquery, _, d3){
       }
     );
     d3.csv(
-      "csv/parlamento_de_navarra.csv",  // TODO --> Change this with wages info
+      "csv/parlamento_de_navarra_extendido.csv",  // TODO --> Change this with wages info
       function(d){
         var salary_components = {
           Madrid : false, //d.Madrid.length ? true : false,
