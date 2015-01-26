@@ -1,0 +1,1 @@
+{"Abad P\u00e9rez, Juan Antonio": {"edad": 50, "localidad": "Pamplona"}}

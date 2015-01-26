@@ -23,8 +23,7 @@
 
 //Namespace
 var CONGRESO = (function(jquery, _, d3){
-  console.log("CONGRESO loaded");
-
+  console.log("PARLAMENTO loaded");
 
   //
   // Common Scope
@@ -43,31 +42,31 @@ var CONGRESO = (function(jquery, _, d3){
     VIEW_GENDER : 2,    // Seats colored by sex
 
     COLOR_GROUP : {
-      "Popular" : "#44f",
-      "Socialista" : "#d00",
-      "Vasco (EAJ-PNV)" : "#0a0",
-      "Catalán  (CiU)" : "#fa0",
-      "Unión Progreso y Democracia" : "#e0e",
-      "La Izquierda Plural" : "#a0f",
-      "Mixto" : "#0dd"
+      "UPN" : "#44f",      
+      "PP" : "#44f",
+      "PSOE" : "#d00",
+      "Bildu" : "#0a0",
+      "Aralar-NaBai" : "#fa0",
+      "No adscrito" : "#e0e",
+      "IU" : "#a0f",
     },
     SHORTEN_GROUP : {
-      "Popular" : "PP",
-      "Socialista" : "PSOE",
-      "Vasco (EAJ-PNV)" : "EAJ-PNV",
-      "Catalán  (CiU)" : "CiU",
-      "Unión Progreso y Democracia" : "UPyD",
-      "La Izquierda Plural" : "IU",
-      "Mixto" : "Mixto"
+      "UPN" : "UPN",
+      "PP" : "PP",
+      "PSOE" : "PSN",
+      "Bildu" : "Bildu",
+      "Aralar-NaBai" : "NaBai",
+      "No adscrito" : "NA",
+      "IU" : "IE",
     },
     COLOR_GENDER : {
-      "F" : "#f0f",
-      "M" : "#0ff",
+      "M" : "#f0f",
+      "H" : "#0ff",
       "Tod@s" : "silver" //Both genders
     },
     EXTEND_GENDER : {
-      "F" : "Diputadas",
-      "M" : "Diputados",
+      "M" : "Parlamentarias",
+      "H" : "Parlamentarios",
       "Tod@s" : "Total" //Both genders
     },
     /*
@@ -89,9 +88,9 @@ var CONGRESO = (function(jquery, _, d3){
     Taken from http://colorbrewer2.org/
     */
     COLOR_SALARY : {
-      60000 : "#fee0d2",
-      95000 : "#fc9272",
-      120000 : "#de2d26"
+      45000 : "#fee0d2",
+      55000 : "#fc9272",
+      60000 : "#de2d26"
     },
     LEGEND_ID : [
       // This order has to match VIEW_ constants
@@ -234,6 +233,8 @@ var CONGRESO = (function(jquery, _, d3){
         var new_object = _.clone(politician_object);
         // Save salary_year before calculating and overriding
         new_object.salary_year_old = politician_object.salary_year;
+        new_object.salary_dietas = politician_object.dietas;
+        new_object.salary_kilometraje = politician_object.kilometraje_2013
         new_object.salary_year_calculated = null;
         new_object.salary_month__base = MONTHLY_COMPONENTS.TODOS;
         new_object.salary_month__mesa = null;
@@ -308,7 +309,7 @@ var CONGRESO = (function(jquery, _, d3){
           new_object.salary_month__provincia
         ;
         new_object.salary_year_calculated = N_MONTHS * new_object.salary_month;
-        new_object.salary_year = new_object.salary_year_calculated; 
+        new_object.salary_year = new_object.salary_year_old; 
 
         // WARNINGS if differences are detected
         if (Math.abs(new_object.salary_year_calculated - new_object.salary_year_old) > 0.0001 ) {
@@ -650,7 +651,7 @@ var CONGRESO = (function(jquery, _, d3){
     };
     // Load data asynchronously
     d3.json(
-      "json/chamber_by_politician.json", 
+      "json/parlamento_de_navarra.json", 
       function(data){
         loaded_data.seats = data;   
         // preload all politician's images (launch now asynchronously)
@@ -665,27 +666,30 @@ var CONGRESO = (function(jquery, _, d3){
       }
     );
     d3.csv(
-      "csv/congreso_refined.csv",  // TODO --> Change this with wages info
+      "csv/parlamento_de_navarra.csv",  // TODO --> Change this with wages info
       function(d){
         var salary_components = {
-          Madrid : d.Madrid.length ? true : false,
-          MP : d.MP.length ? true : false,
-          MV : d.MV.length ? true : false,
-          MS : d.MS.length ? true : false,
-          GPO : d.GPO.length ? true : false,
-          GPA : d.GPA.length ? true : false,
-          CP : d.CP.length ? true : false,
-          CV : d.CV.length ? true : false,
-          CS : d.CS.length ? true : false,
-          CPO : d.CPO.length ? true : false,
-          CPA : d.CPA.length ? true : false
+          Madrid : false, //d.Madrid.length ? true : false,
+          MP : false, //d.MP.length ? true : false,
+          MV : false, //d.MV.length ? true : false,
+          MS : false, //d.MS.length ? true : false,
+          GPO : false, //d.GPO.length ? true : false,
+          GPA : false, //d.GPA.length ? true : false,
+          CP : false, //d.CP.length ? true : false,
+          CV : false, //d.CV.length ? true : false,
+          CS : false, //d.CS.length ? true : false,
+          CPO : false, //d.CPO.length ? true : false,
+          CPA : false, //d.CPA.length ? true : false
         };
+        console.log(d["apellidos"]);
+        console.log(d["salario_anual"]);
+        console.log(parseFloat(+d["salario_anual"]));
         var r =  {
           name : d.NOMBRE,
-          salary_year : parseFloat(+d["TOTAL AÑO"]), // + --> fast cohercion into number
+          salary_year : parseFloat(+d["salario_anual"]), // + --> fast cohercion into number
           salary_components : salary_components,
           gender : d.SEXO,
-          province : d.PROVINCIA
+          province : d.lugar_origen
         };
         return r;
       },
@@ -745,11 +749,11 @@ var CONGRESO = (function(jquery, _, d3){
           }
         })
         .attr("cx", function(d, i){
-          var x = $.adjustCoords(d.seat_coords[0]);
+          var x = $.adjustCoords(40 + d.seat_coords[0]*1.9);
           return x;
         })
         .attr("cy", function(d, i){
-          var y = $.adjustCoords(d.seat_coords[1]);
+          var y = $.adjustCoords(d.seat_coords[1]*1.9);
           return y;
         })
         .attr("r", function(d, i){
@@ -765,7 +769,7 @@ var CONGRESO = (function(jquery, _, d3){
           // Try out alternatives
           //var f = 0.6 + (d.salary_year_calculated-50000)/(190000-50000)*1.8;
           //var f = 0.3 + (d.salary_year_calculated-50000)/(190000-50000)*3.8;
-          var f = 0.5 + (d.salary_year_calculated-50000)/(190000-50000)*3.8;
+          var f = 0.5 + (d.salary_year-35000)/(80000-30000)*3.8;
           //var f = Math.sqrt(d.salary_year_calculated)/Math.sqrt(50000); // Surface is not so obvious
           //var f = d.salary_year_calculated/50000; // Surface is not so obvious
 
@@ -944,8 +948,8 @@ var CONGRESO = (function(jquery, _, d3){
     ; 
 
     // Photo
-    var photo_w = $.W_chamber/6; 
-    var photo_h = $.W_chamber/6; 
+    var photo_w = $.W_chamber/3; 
+    var photo_h = $.W_chamber/3; 
     infobox.append("svg:image")
         .attr("class", "info")
         .attr(
@@ -977,6 +981,8 @@ var CONGRESO = (function(jquery, _, d3){
 
     var selected_seat = $.selected_seat;
     var selected_politician = $.data_merged[selected_seat];
+
+    console.log(selected_politician);
     if (!selected_politician) return;
 
     //
@@ -1009,7 +1015,7 @@ var CONGRESO = (function(jquery, _, d3){
         .attr("class", "info")
        .style("margin", "0.5em")
         .style("color", $.COLOR_GROUP[selected_politician.group])
-        .html("Grupo "+selected_politician.group)
+        .html(selected_politician.group)
     ;
     // Sueldo
     var f = $.LOCALE.numberFormat(",.0f");
@@ -1028,21 +1034,21 @@ var CONGRESO = (function(jquery, _, d3){
         .classed("info", true)
     ; 
     breakdown.append("span")
-        .text("Salario Base ")
+        .text("Dietas ")
     ;
     breakdown.append("strong")
         .style("font-size", "1.2em")
-        .html(f(selected_politician.salary_month__base) + " &euro;/mes")
+        .html(f(selected_politician.salary_dietas) + " &euro;")
     ;
     breakdown.append("span")
         .html(" - ")
     ;
     breakdown.append("span")
-        .text("Indeminzación Provincia ")
+        .text("Kilometraje ")
     ;
     breakdown.append("strong")
         .style("font-size", "1.2em")
-        .html(f(selected_politician.salary_month__provincia) + " &euro;/mes")
+        .html(f(selected_politician.salary_kilometraje) + " &euro;")
     ;
     breakdown.append("span")
         .html(" - ")

@@ -1,0 +1,186 @@
+<!doctype html>
+<!--
+@source: https://github.com/aluarosi/congreso
+@licstart  
+    This file is part of CongrESo
+    (Spanish Congress, an interactive visualization)
+    https://github.com/aluarosi/congreso
+    
+    Copyright (C) 2014 Alvaro Santamaria Herrero (aluarosi)
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+@licend  
+-->
+
+<html>
+<head>
+  <title>Laboratorio de Innovacion Periodística :: Visualización interactiva del Parlamento de Navarra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <!-- BOOTSTRAP 3 --> 
+  <!--<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/my_styles.css">
+
+<!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+  <!-- D3.js 
+    http://d3js.org
+    Sites using HTTPS may wish to self-host D3, or use a CDN that supports HTTPS, such as CDNJS. 
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+  <!-- Latest cmpiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <!--script src="js/data1.js"></script-->
+  <!--<script src="js/test1.js"></script>-->
+  <script src="js/congreso.js"></script>
+  <script>
+    //CONGRESO.main();
+    $(document).ready(CONGRESO.main.bind(CONGRESO));
+  </script>
+
+
+</head>
+<body>
+  <style>
+    .title-underline {
+      border-bottom: 1px solid grey;
+      padding-top: 0.2em;
+      padding-left: 0.2em;
+      margin-top: 1em;
+      font-size: 140%;
+    }
+
+    #right-panel {
+      padding-right: 3em;
+      padding-left: 3em;
+    }
+
+    #legend-container {
+     margin-top: 0.5em;
+     margin-bottom: 0.5em;
+
+    }
+    
+    .hidden {
+     /* For hiding some elements while loading */
+     display: none;
+    }
+
+    #hint {
+     float: right;
+     font-size: 1.1em;
+    }
+    
+    /*
+    #parlamento {
+      background-image: url("/img/fondo_congreso.png");
+      background-size: 140% 120%;
+      border: 1px solid #eee;
+    }
+    */
+  </style>
+
+
+  <div class="container">
+
+    <div class="row" id="outer-container" >
+
+      <div class="col-md-7" id="congress-container" >
+
+        <div class="row">
+          <div id="hint" class="hidden text-muted">
+            <span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span>
+            ¡Explora el hemiciclo! 
+          </div>
+          <div id="congress-container">
+            <div id="buttons" class="btn-group hidden" data-toggle="buttons">
+              <label class="btn btn-default btn-sm">
+                <input class="view-selector" type="radio" name="0" id="option1" autocomplete="off" > Grupo
+              </label>
+              <label class="btn btn-default btn-sm active">
+                <input class="view-selector" type="radio" name="1" id="option2" autocomplete="off" checked> Sueldo
+              </label>
+              <label class="btn btn-default btn-sm">
+                <input class="view-selector" type="radio" name="2" id="option3" autocomplete="off"> Sexo
+              </label>
+            </div>
+          </div>
+          <div id="legend-container">
+          </div>
+        </div>
+        
+
+
+        <svg  xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          id="parlamento" width="800" height="600">
+        </svg>
+        <div id="info-extended" class="row" style="margin-top: 1em">
+        </div>
+      </div>
+    
+
+      <div class="col-md-5 hidden" id="right-panel">
+        <div class="row">
+
+          <div class="col-md-12" id="right-panel-1">
+
+            <!--
+	    <div class = "row" id="navigation">
+              <ul class="nav nav-tabs" id="navigation-tabs">
+                <li role="presentation" id="nav-rank" class="active"><a>Ranking</a></li>
+                <li role="presentation" id="nav-avg" ><a >Resumen</a></li>
+              </ul>
+            </div>
+	    -->
+
+            <div id="ranking" class="row nav-target nav-rank">
+              <!--<h4 class="title-underline">Ranking</h4>-->
+              <p class="text-muted" style="margin-top:0.5em;">Busca parlamentarios/as por nombre, origen o grupo parlamentario. Haz click en la chincheta para seleccionar y fijar arriba de la lista.</p>
+              <div class="input-group" style="margin-bottom:1em">
+                <input type="search" class="form-control" title="Introduce texto de búsqueda" placeholder="Busca Parlamentarios/as"
+                  id="ranking-filter" >
+                <span id="ranking-filter-submit" class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+              </div>
+              <div id="ranking-list">
+              </div>
+            </div>
+
+            <!--
+            <div id="averages" class="row nav-target nav-avg" style="padding-left:1em;">
+              <h4 class="title-underline">Total Sueldos</h4>
+              <div id="total">
+              </div>
+              <h4 class="title-underline">Sueldo Mediano</h4>
+              <div id="average-gender">
+              </div>
+              <h4 class="title-underline">Sueldo Mediano por Grupo</h4>
+              <div id="average-group">
+              </div>
+            </div>
+            -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<map name="Map" id="Map">
+    
+       <area id="cp6" shape="circle" class="jt" coords="166,127,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=6&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=6&amp;idsection=733" title="Barcina Angulo, Yolanda">
+    
+       <area id="cp12" shape="circle" class="jt" coords="176,74,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=12&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=12&amp;idsection=733" title="Sayas López, Sergio">
+    
+       <area id="cp11" shape="circle" class="jt" coords="183,89,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=11&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=11&amp;idsection=733" title="Caballero Martínez, Javier">
+    
+       <area id="cp10" shape="circle" class="jt" coords="187,105,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=10&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=10&amp;idsection=733" title="Sanzberro Iturriria, Begoña">
+    
+       <area id="cp9" shape="circle" class="jt" coords="186,122,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=9&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=9&amp;idsection=733" title="Pérez Prados, Antonio">
+    
+       <area id="cp8" shape="circle" class="jt" coords="182,137,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=8&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=8&amp;idsection=733" title="García Adanero, Carlos">
+    
+       <area id="cp34" shape="circle" class="jt" coords="188,60,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=34&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=34&amp;idsection=733" title="Rapún León, José Antonio">
+    
+       <area id="cp33" shape="circle" class="jt" coords="197,77,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=33&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=33&amp;idsection=733" title="Garijo Pérez, Esteban">
+    
+       <area id="cp32" shape="circle" class="jt" coords="203,96,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=32&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=32&amp;idsection=733" title="González García, Carmen María">
+    
+       <area id="cp28" shape="circle" class="jt" coords="205,114,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=28&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=28&amp;idsection=733" title="Gómez Ortigosa, Jerónimo">
+    
+       <area id="cp25" shape="circle" class="jt" coords="202,133,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=25&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=25&amp;idsection=733" title="Gainza Aznárez, Coro">
+    
+       <area id="cp23" shape="circle" class="jt" coords="196,150,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=23&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=23&amp;idsection=733" title="Castillo Floristán, M.ª Victoria">
+    
+       <area id="cp53" shape="circle" class="jt" coords="216,76,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=53&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=53&amp;idsection=733" title="Esparza Iriarte, Jesús">
+    
+       <area id="cp52" shape="circle" class="jt" coords="220,93,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=52&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=52&amp;idsection=733" title="Otamendi Claramunt, Amaya">
+    
+       <area id="cp51" shape="circle" class="jt" coords="222,111,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=51&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=51&amp;idsection=733" title="Lorente Pérez, Francisco Javier">
+    
+       <area id="cp37" shape="circle" class="jt" coords="220,129,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=37&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=37&amp;idsection=733" title="Garbayo Berdonces, Raquel">
+    
+       <area id="cp36" shape="circle" class="jt" coords="216,146,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=36&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=36&amp;idsection=733" title="Casado Oliver, Ramón">
+    
+       <area id="cp35" shape="circle" class="jt" coords="210,162,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=35&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=35&amp;idsection=733" title="Ferrer Cajal, M.ª del Carmen">
+    
+       <area id="cp17" shape="circle" class="jt" coords="86,50,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=17&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=17&amp;idsection=733" title="Zabaleta Zabaleta, Patxi">
+    
+       <area id="cp16" shape="circle" class="jt" coords="101,44,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=16&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=16&amp;idsection=733" title="Fernández de Garaialde y Lazkano, Asun">
+    
+       <area id="cp14" shape="circle" class="jt" coords="117,42,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=14&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=14&amp;idsection=733" title="Pérez Irazabal, Nekane">
+    
+       <area id="cp13" shape="circle" class="jt" coords="133,44,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=13&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=13&amp;idsection=733" title="Longás García, Juan Carlos">
+    
+       <area id="cp30" shape="circle" class="jt" coords="149,50,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=30&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=30&amp;idsection=733" title="Lasa Gorraiz, Xabier">
+    
+       <area id="cp29" shape="circle" class="jt" coords="145,28,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=29&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=29&amp;idsection=733" title="Leuza García, Patxi">
+    
+       <area id="cp15" shape="circle" class="jt" coords="160,36,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=15&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=15&amp;idsection=733" title="Ayerdi Olaizola, Manu">
+    
+       <area id="cp43" shape="circle" class="jt" coords="59,25,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=43&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=43&amp;idsection=733" title="Ramírez Erro, Maiorga">
+    
+       <area id="cp42" shape="circle" class="jt" coords="74,16,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=42&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=42&amp;idsection=733" title="Ruiz Jaso, Bakartxo">
+    
+       <area id="cp41" shape="circle" class="jt" coords="91,10,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=41&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=41&amp;idsection=733" title="Sarasola Jaca, Aitziber">
+    
+       <area id="cp40" shape="circle" class="jt" coords="108,7,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=40&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=40&amp;idsection=733" title="Barea Aiestaran, Bikendi">
+    
+       <area id="cp38" shape="circle" class="jt" coords="126,8,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=38&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=38&amp;idsection=733" title="Rubio Martínez, Víctor">
+    
+       <area id="cp54" shape="circle" class="jt" coords="143,10,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=54&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=54&amp;idsection=733" title="Aranoa Astigarraga, Miren Julia">
+    
+       <area id="cp7" shape="circle" class="jt" coords="53,137,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=7&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=7&amp;idsection=733" title="Jiménez Alli, Roberto">
+    
+       <area id="cp22" shape="circle" class="jt" coords="49,122,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=22&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=22&amp;idsection=733" title="Lizarbe Baztán, Juan José">
+    
+       <area id="cp20" shape="circle" class="jt" coords="49,104,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=20&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=20&amp;idsection=733" title="Arraiza Zorzano, María Victoria">
+    
+       <area id="cp21" shape="circle" class="jt" coords="49,104,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=21&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=21&amp;idsection=733" title="Felones Morrás, Román">
+    
+       <area id="cp19" shape="circle" class="jt" coords="52,88,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=19&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=19&amp;idsection=733" title="Rascón Macías, Pedro">
+    
+       <area id="cp18" shape="circle" class="jt" coords="59,74,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=18&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=18&amp;idsection=733" title="Ochoa Canela, M.ª del Carmen">
+    
+       <area id="cp31" shape="circle" class="jt" coords="40,151,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=31&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=31&amp;idsection=733" title="Galilea Arazuri, Gregorio">
+    
+       <area id="cp56" shape="circle" class="jt" coords="34,135,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=56&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=56&amp;idsection=733" title="Cerdán León, Santos">
+    
+       <area id="cp50" shape="circle" class="jt" coords="26,161,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=50&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=50&amp;idsection=733" title="Nuin Moreno, José Miguel">
+    
+       <area id="cp49" shape="circle" class="jt" coords="19,145,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=49&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=49&amp;idsection=733" title="De Simón Caballero, Marisa">
+    
+       <area id="cp48" shape="circle" class="jt" coords="14,128,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=48&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=48&amp;idsection=733" title="Mauleón Echeverría, Txema">
+    
+       <area id="cp57" shape="circle" class="jt" coords="14,94,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=57&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=57&amp;idsection=733" title="Gorri Gil, Eva María">
+    
+       <area id="cp46" shape="circle" class="jt" coords="19,76,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=46&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=46&amp;idsection=733" title="Zarranz Errea, Amaya">
+    
+       <area id="cp45" shape="circle" class="jt" coords="26,59,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=45&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=45&amp;idsection=733" title="Villanueva Cruz, Eloy">
+    
+       <area id="cp44" shape="circle" class="jt" coords="36,45,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=44&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=44&amp;idsection=733" title="Beltrán Villalba, Ana">
+    
+       <area id="cp4" shape="circle" class="jt" coords="88,196,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=4&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=4&amp;idsection=733" title="Amezketa Díaz, Koldo">
+    
+       <area id="cp2" shape="circle" class="jt" coords="102,196,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=2&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=2&amp;idsection=733" title="Jiménez Hervás, Txentxo">
+    
+       <area id="cp1" shape="circle" class="jt" coords="117,196,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=1&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=1&amp;idsection=733" title="Catalán Higueras, Alberto">
+    
+       <area id="cp3" shape="circle" class="jt" coords="132,196,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=3&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=3&amp;idsection=733" title="Caro Sádaba, Samuel">
+    
+       <area id="cp5" shape="circle" class="jt" coords="148,196,4" href="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=5&amp;idsection=733" rel="http://www.parlamentodenavarra.es/Modules/Hemiciclo/DatosPerGrupo.aspx?&amp;id=5&amp;idsection=733" title="Esporrín Las Heras, Maite">
+    
+</map>
