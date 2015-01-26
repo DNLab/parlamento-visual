@@ -1,7 +1,8 @@
-CongrESo
-============
-Spanish Congress, an interactive visualization
+Parlamento de Navarra
+=====================
 
-See the demo: http://sueldosdiputados.herokuapp.com/
+Una visualización interactiva del Parlamento de Navarra
+
+Basada en el proyecto: http://sueldosdiputados.herokuapp.com/
 
 
