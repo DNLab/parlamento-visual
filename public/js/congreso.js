@@ -234,7 +234,7 @@ var CONGRESO = (function(jquery, _, d3){
         // Save salary_year before calculating and overriding
         new_object.salary_year_old = politician_object.salary_year;
         new_object.salary_dietas = politician_object.dietas;
-        new_object.salary_kilometraje = politician_object.kilometraje_2013
+        new_object.salary_kilometraje = politician_object.kilometraje
         new_object.salary_year_calculated = null;
         new_object.salary_month__base = MONTHLY_COMPONENTS.TODOS;
         new_object.salary_month__mesa = null;
@@ -313,7 +313,7 @@ var CONGRESO = (function(jquery, _, d3){
 
         // WARNINGS if differences are detected
         if (Math.abs(new_object.salary_year_calculated - new_object.salary_year_old) > 0.0001 ) {
-          console.log("ERROR in calculated SALARY for ", new_object.name, 
+            console.log("ERROR in calculated SALARY for ", new_object.name, 
             new_object.salary_year_calculated, new_object.salary_year_old);
         } else {
           console.log("OK", new_object.name);
@@ -664,7 +664,7 @@ var CONGRESO = (function(jquery, _, d3){
         */
         collector();
       }
-    );
+    ); 
     d3.csv(
       "csv/parlamento_de_navarra_extendido.csv",  // TODO --> Change this with wages info
       function(d){
@@ -682,15 +682,21 @@ var CONGRESO = (function(jquery, _, d3){
           CPA : false, //d.CPA.length ? true : false
         };
         console.log(d["apellidos"]);
-        console.log(d["salario_anual"]);
-        console.log(parseFloat(+d["salario_anual"]));
+        console.log(parseFloat(+d["dietas_viajes_2014"]));
+        console.log(parseFloat(+d["dietas_bruto_2014"]));
+        console.log(d["observaciones"])
         var r =  {
           name : d.NOMBRE,
-          salary_year : parseFloat(+d["salario_anual"]), // + --> fast cohercion into number
+          salary_year : parseFloat(+d["total_retribuciones_2014"]), // + --> fast cohercion into number
+          salario: parseFloat(+d["salario_bruto_2014"]), 
+          dietas : parseFloat(+d["dietas_bruto_2014"]), // + --> fast cohercion into number          
+          kilometraje : parseFloat(+d["kilometraje_2014"]), // + --> fast cohercion into number
+          viajes: parseFloat(+d["dietas_viajes_2014"]),          
           salary_components : salary_components,
+          observaciones: d.observaciones,
           gender : d.SEXO,
           province : d.lugar_origen
-        };
+        }; // salario_bruto_2014  dietas_bruto_2014 kilometraje_2014  dietas_viajes_2014 total_retribuciones_2014
         return r;
       },
       function(err, data){
@@ -769,7 +775,7 @@ var CONGRESO = (function(jquery, _, d3){
           // Try out alternatives
           //var f = 0.6 + (d.salary_year_calculated-50000)/(190000-50000)*1.8;
           //var f = 0.3 + (d.salary_year_calculated-50000)/(190000-50000)*3.8;
-          var f = 0.5 + (d.salary_year-35000)/(80000-30000)*3.8;
+          var f = 0.5 + (d.salary_year-15000)/(70000-15000)*2.8;
           //var f = Math.sqrt(d.salary_year_calculated)/Math.sqrt(50000); // Surface is not so obvious
           //var f = d.salary_year_calculated/50000; // Surface is not so obvious
 
@@ -1033,72 +1039,64 @@ var CONGRESO = (function(jquery, _, d3){
     var breakdown = infoext.append("div")
         .classed("info", true)
     ; 
-    breakdown.append("span")
-        .text("Dietas ")
-    ;
-    breakdown.append("strong")
-        .style("font-size", "1.2em")
-        .html(f(selected_politician.salary_dietas) + " &euro;")
-    ;
-    breakdown.append("span")
-        .html(" - ")
-    ;
-    breakdown.append("span")
-        .text("Kilometraje ")
-    ;
-    breakdown.append("strong")
-        .style("font-size", "1.2em")
-        .html(f(selected_politician.salary_kilometraje) + " &euro;")
-    ;
-    breakdown.append("span")
-        .html(" - ")
-    ;
-    if (selected_politician.salary_month__mesa){
+
+    if (selected_politician.salario > 0){    
       breakdown.append("span")
-          .text("Cargo Mesa ")
+          .text("Salario ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
-          .html(f(selected_politician.salary_month__mesa) + " &euro;/mes")
+          .html(f(selected_politician.salario) + " &euro;")
       ;
       breakdown.append("span")
           .html(" - ")
       ;
     }
-    if (selected_politician.salary_month__grupo){
+
+    if (selected_politician.dietas > 0){    
       breakdown.append("span")
-          .text("Portavoz Grupo ")
+          .text("Dietas ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
-          .html(f(selected_politician.salary_month__grupo) + " &euro;/mes")
+          .html(f(selected_politician.dietas) + " &euro;")
       ;
       breakdown.append("span")
           .html(" - ")
       ;
     }
-    if (selected_politician.salary_month__comision){
+
+    if (selected_politician.viajes > 0){    
       breakdown.append("span")
-          .text("Cargo Comisión ")
+          .text("Dietas ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
-          .html(f(selected_politician.salary_month__comision) + " &euro;/mes")
+          .html(f(selected_politician.viajes) + " &euro;")
       ;
       breakdown.append("span")
           .html(" - ")
       ;
     }
-    breakdown.append("span")
-        .text("TOTAL ")
-    ;
-    breakdown.append("strong")
-        .style("font-size", "1.2em")
-        .html(f(selected_politician.salary_month) + " &euro;/mes")
-    ;
-    breakdown.append("span")
-        .html(" (14 mensualidades) ")
-    ;
+
+    if (selected_politician.kilometraje > 0){      
+      breakdown.append("span")
+          .text("Kilometraje ")
+      ;
+      breakdown.append("strong")
+          .style("font-size", "1.2em")
+          .html(f(selected_politician.kilometraje) + " &euro;")
+      ;
+      breakdown.append("span")
+          .html(" - ")
+      ;
+    }
+    
+    if (selected_politician.observaciones){      
+      breakdown.append("span")
+         .text(selected_politician.observaciones)
+      ;
+    }
     
     
     
