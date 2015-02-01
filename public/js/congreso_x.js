@@ -118,7 +118,6 @@ var CONGRESO = (function(jquery, _, d3){
     //
     data_seats : null, // This is an object
     data_wages : null, // This is an object
-
     data_merged : null, // This is a LIST
     data_names : null, // List of all politician's names
     data_selected_names : null, // List of selected politician's names (ranking filter)
@@ -649,7 +648,8 @@ var CONGRESO = (function(jquery, _, d3){
     console.log("LoadData");
     var loaded_data = {
       seats : null,
-      wages : null
+      wages : null,
+      vacios : null
     };
     // Load data asynchronously
     d3.json(
@@ -667,6 +667,16 @@ var CONGRESO = (function(jquery, _, d3){
         collector();
       }
     ); 
+    /*
+    d3.json(
+      "json/empty.json", 
+      function(data){
+        loaded_data.vacios = data;   
+        
+        collector();
+      }
+    );
+    */     
     d3.csv(
       "csv/parlamento_de_navarra_extendido.csv",  // TODO --> Change this with wages info
       function(d){
