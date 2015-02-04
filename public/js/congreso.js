@@ -88,8 +88,9 @@ var CONGRESO = (function(jquery, _, d3){
     Taken from http://colorbrewer2.org/
     */
     COLOR_SALARY : {
-      45000 : "#fee0d2",
-      55000 : "#fc9272",
+      20000 : "#ffffff",
+      30000 : "#fee0d2",
+      50000 : "#fc9272",
       60000 : "#de2d26"
     },
     LEGEND_ID : [
@@ -634,9 +635,45 @@ var CONGRESO = (function(jquery, _, d3){
     drawAll();
   };
 
+  function drawEmpty(){
+
+var empty_seats = [ {"seat_code": "001", "seat_coords": ["13", "110"]},
+                {"seat_code": "002", "seat_coords": ["30", "113"]},
+                {"seat_code": "003", "seat_coords": ["31", "96"]},
+                {"seat_code": "004", "seat_coords": ["37", "77"]},
+                {"seat_code": "005", "seat_coords": ["46", "61"]},
+                {"seat_code": "006", "seat_coords": ["71", "36"]},
+                {"seat_code": "007", "seat_coords": ["88", "28"]},
+                {"seat_code": "008", "seat_coords": ["108", "24"]},
+                {"seat_code": "009", "seat_coords": ["125", "24"]},
+                {"seat_code": "010", "seat_coords": ["160", "16"]},
+                {"seat_code": "011", "seat_coords": ["175", "24"]},
+                {"seat_code": "012", "seat_coords": ["198", "45"]},
+                {"seat_code": "013", "seat_coords": ["208", "60"]},
+                //{"seat_code": "015", "seat_coords": ["98", "63"]},
+                //{"seat_code": "016", "seat_coords": ["107", "60"]},
+                //{"seat_code": "017", "seat_coords": ["163", "86"]},
+                //{"seat_code": "018", "seat_coords": ["68", "126"]}
+                ];
+
+var circles = $.svg.selectAll(".empty")
+                          .data(empty_seats)
+                          .enter()
+                          .append("circle")
+                            .attr("class", "empty");
+
+var circleAttributes = circles
+                       .attr("cx", function (d) { return $.adjustCoords(40 + d.seat_coords[0]*1.9); })
+                       .attr("cy", function (d) { return $.adjustCoords(d.seat_coords[1]*1.9); })
+                       .attr("r", function (d) { return 10; })
+                       .style("fill", function(d) { return "000"; });                
+
+}
+
   function drawAll(){
     console.log("drawAll");
 
+    drawEmpty();
     drawSeats();
     drawInfo();
     drawInfoExtended();
@@ -1165,7 +1202,7 @@ var CONGRESO = (function(jquery, _, d3){
         .style("padding-left", em*0.5+"px")
         .style("padding-right", em+"px")
         .html(function(d,i){
-          return "< "+d[0]+" &euro;";        
+          return "> "+parseInt(d[0]).toLocaleString()+" &euro;";        
         })
     ;
 
