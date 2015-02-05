@@ -735,7 +735,9 @@ var circleAttributes = circles
           observaciones: d.observaciones,
           gender : d.SEXO,
           edad: d.edad,
-          province : d.domicilio
+          province : d.domicilio,
+          dedicacion: d.dedicacion,
+          tiempo: d.tiempo
         }; // salario_bruto_2014  dietas_bruto_2014 kilometraje_2014  dietas_viajes_2014 total_retribuciones_2014
         return r;
       },
@@ -983,6 +985,7 @@ var circleAttributes = circles
         .style("text-anchor", "middle")
         .style("font-size", text_h/1.2)
     ; 
+
     var f = $.LOCALE.numberFormat(",.0f");
     console.log(f(20000));
     infobox.append("text")
@@ -990,7 +993,7 @@ var circleAttributes = circles
         .html(f(selected_politician.salary_year)
           +" &euro;/año" )
         .style("text-anchor", "middle")
-        .style("font-size", text_h/1.2)
+        .style("font-size", text_h)
         .attr("transform", "translate(0,"+text_h*1.1+")");
     ; 
 
@@ -1022,6 +1025,8 @@ var circleAttributes = circles
   function drawInfoExtended(){
     console.log("drawInfoExtended");
 
+    var f = $.LOCALE.numberFormat(",.0f");
+
     var infoext = $.infoext;
     // Delete all inside infobox
     infoext.selectAll(".info").remove();
@@ -1050,10 +1055,11 @@ var circleAttributes = circles
         .html(selected_politician.group)
     ;
 
+    
     inner.append("span")
           .html(" - ")
       ;
-
+    
     inner
       .append("strong")
       .append("a")
@@ -1065,17 +1071,33 @@ var circleAttributes = circles
     ;
 
      // Edad
+     /*
     inner.append("strong")
-        .html(" (" + selected_politician.edad + " años, ")
+        .html(" ( ")
     ;
-    // Provincia
+    */
+
+    if (selected_politician.edad > 0){  
     inner.append("strong")
-        .html(selected_politician.province + " )" )
+        .html(" - " + selected_politician.edad + " años ")
     ;
 
+    }
+    if (selected_politician.province.length > 0){ 
+      // Provincia
+      inner.append("strong")
+          .html(" - Reside en " + selected_politician.province )
+      ;
+    }
 
-    
+    /*
+    inner.append("strong")
+        .html(" )")
+    ;
+    */
+
     // Sueldo
+    /*
     var f = $.LOCALE.numberFormat(",.0f");
     var formatted_salary = f(selected_politician.salary_year);
     inner.append("span")
@@ -1084,6 +1106,7 @@ var circleAttributes = circles
         .style("font-size", "120%")
         .html(formatted_salary+" &euro;/año")
     ;
+    */
 
     //
     // Salary breakdown
@@ -1092,56 +1115,56 @@ var circleAttributes = circles
         .classed("info", true)
     ; 
 
+    breakdown.append("span")
+          .html((selected_politician.tiempo) + " años en el Parlamento")
+    ;
+
+    breakdown.append("span")
+          .html( " - Dedicación " + selected_politician.dedicacion)
+    ;
+
     if (selected_politician.salario > 0){    
       breakdown.append("span")
-          .text("Salario ")
+          .text(" - Salario ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
           .html(f(selected_politician.salario) + " &euro;")
       ;
-      breakdown.append("span")
-          .html(" - ")
-      ;
+
     }
 
     if (selected_politician.dietas > 0){    
       breakdown.append("span")
-          .text("Dietas ")
+          .text(" - Dietas ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
           .html(f(selected_politician.dietas) + " &euro;")
       ;
-      breakdown.append("span")
-          .html(" - ")
-      ;
+
     }
 
     if (selected_politician.viajes > 0){    
       breakdown.append("span")
-          .text("Dietas ")
+          .text(" - Dietas de viaje ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
           .html(f(selected_politician.viajes) + " &euro;")
       ;
-      breakdown.append("span")
-          .html(" - ")
-      ;
+
     }
 
     if (selected_politician.kilometraje > 0){      
       breakdown.append("span")
-          .text("Kilometraje ")
+          .text(" - Kilometraje ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
           .html(f(selected_politician.kilometraje) + " &euro;")
       ;
-      breakdown.append("span")
-          .html(" - ")
-      ;
+
     }
     
     if (selected_politician.observaciones){      
