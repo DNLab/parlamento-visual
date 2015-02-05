@@ -49,6 +49,7 @@ var CONGRESO = (function(jquery, _, d3){
       "Aralar-NaBai" : "#fa0",
       "No adscrito" : "#AE8558",
       "IU" : "#a0f",
+      "X" : "#000"
     },
     SHORTEN_GROUP : {
       "UPN" : "UPN",
@@ -57,16 +58,19 @@ var CONGRESO = (function(jquery, _, d3){
       "Bildu" : "Bildu",
       "Aralar-NaBai" : "NaBai",
       "No adscrito" : "No adscrito",
+      "X" : "Escaño vacío",
       "IU" : "IE",
     },
     COLOR_GENDER : {
       "M" : "#f0f",
       "H" : "#0ff",
+      "X" : "#000",
       "Tod@s" : "silver" //Both genders
     },
     EXTEND_GENDER : {
       "M" : "Parlamentarias",
       "H" : "Parlamentarios",
+      "X" : "Escaño vacío",
       "Tod@s" : "Total" //Both genders
     },
     /*
@@ -91,7 +95,8 @@ var CONGRESO = (function(jquery, _, d3){
       20000 : "#ffffff",
       30000 : "#fee0d2",
       50000 : "#fc9272",
-      60000 : "#de2d26"
+      60000 : "#de2d26",
+      'X' : "#000000"
     },
     LEGEND_ID : [
       // This order has to match VIEW_ constants
@@ -1225,7 +1230,11 @@ var circleAttributes = circles
         .style("padding-left", em*0.5+"px")
         .style("padding-right", em+"px")
         .html(function(d,i){
-          return "> "+parseInt(d[0]).toLocaleString()+" &euro;";        
+          if (d[0] == 'X') {
+            return "Escaño vacío";
+          } else {
+            return "> "+parseInt(d[0]).toLocaleString()+" &euro;";        
+          }
         })
     ;
 
