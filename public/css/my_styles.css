@@ -1,4 +1,8 @@
 
 #_parlamento {
-  border: 100px solid red;
+  border: 1px solid red;
+}
+
+p {
+    font-family: "Times New Roman", Times, serif;
 }
