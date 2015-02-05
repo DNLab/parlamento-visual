@@ -57,6 +57,9 @@
 </head>
 <body>
   <style>
+  h2 {
+    font-family: "Times New Roman", Times, serif;
+}
     .title-underline {
       border-bottom: 1px solid grey;
       padding-top: 0.2em;
