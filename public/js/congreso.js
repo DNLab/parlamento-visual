@@ -642,7 +642,7 @@ var CONGRESO = (function(jquery, _, d3){
 
   function drawEmpty(){
 
-var empty_seats = [ {"seat_code": "001", "seat_coords": ["13", "110"]},
+    var empty_seats = [ {"seat_code": "001", "seat_coords": ["13", "110"]},
                 {"seat_code": "002", "seat_coords": ["30", "113"]},
                 {"seat_code": "003", "seat_coords": ["31", "96"]},
                 {"seat_code": "004", "seat_coords": ["37", "77"]},
@@ -661,27 +661,27 @@ var empty_seats = [ {"seat_code": "001", "seat_coords": ["13", "110"]},
                 //{"seat_code": "018", "seat_coords": ["68", "126"]}
                 ];
 
-var circles = $.svg.selectAll(".empty")
-                          .data(empty_seats)
-                          .enter()
-                          .append("circle")
-                            .attr("class", "empty");
+    var circles = $.svg.selectAll(".empty")
+                              .data(empty_seats)
+                              .enter()
+                              .append("circle")
+                                .attr("class", "empty");
 
-var circleAttributes = circles
-                       .attr("cx", function (d) { return $.adjustCoords(40 + d.seat_coords[0]*1.9); })
-                       .attr("cy", function (d) { return $.adjustCoords(d.seat_coords[1]*1.9); })
-                       .attr("r", function (d) { return 10; })
-                       .style("fill", function(d) { return "000"; });                
+    var circleAttributes = circles
+                           .attr("cx", function (d) { return $.adjustCoords(40 + d.seat_coords[0]*1.9); })
+                           .attr("cy", function (d) { return $.adjustCoords(d.seat_coords[1]*1.9); })
+                           .attr("r", function (d) { return 10; })
+                           .style("fill", function(d) { return "000"; });                
 
-}
+  }
 
   function drawAll(){
     console.log("drawAll");
 
-    drawEmpty();
     drawSeats();
     drawInfo();
     drawInfoExtended();
+    drawEmpty();
   }; 
 
   //
