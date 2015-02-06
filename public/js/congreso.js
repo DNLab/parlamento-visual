@@ -661,6 +661,7 @@ var CONGRESO = (function(jquery, _, d3){
                 //{"seat_code": "018", "seat_coords": ["68", "126"]}
                 ];
 
+    /*
     var circles = $.svg.selectAll(".empty")
                               .data(empty_seats)
                               .enter()
@@ -671,7 +672,22 @@ var CONGRESO = (function(jquery, _, d3){
                            .attr("cx", function (d) { return $.adjustCoords(40 + d.seat_coords[0]*1.9); })
                            .attr("cy", function (d) { return $.adjustCoords(d.seat_coords[1]*1.9); })
                            .attr("r", function (d) { return 10; })
-                           .style("fill", function(d) { return "000"; });                
+                           .style("fill", function(d) { return "000"; });     
+
+    */
+
+    var circles = $.svg.selectAll(".empty")
+    .data(empty_seats);
+
+    var circles_enter = circles.enter()
+    .append("circle")
+    .attr("class", "empty");
+
+    circles
+    .attr("cx", function (d) { return $.adjustCoords(40 + d.seat_coords[0]*1.9); })
+    .attr("cy", function (d) { return $.adjustCoords(d.seat_coords[1]*1.9); })
+    .attr("r", function (d) { return 10; })
+    .style("fill", function(d) { return "000"; });  
 
   }
 
@@ -1091,7 +1107,7 @@ var CONGRESO = (function(jquery, _, d3){
     if (selected_politician.province.length > 0){ 
       // Provincia
       inner.append("strong")
-          .html(" - Reside en " + selected_politician.province )
+          .html(" - Residencia: " + selected_politician.province )
       ;
     }
 
@@ -1121,16 +1137,16 @@ var CONGRESO = (function(jquery, _, d3){
     ; 
 
     breakdown.append("span")
-          .html((selected_politician.tiempo) + " años en el Parlamento")
+          .html("Actividad parlamentaria: " + (selected_politician.tiempo) + " años")
     ;
 
     breakdown.append("span")
-          .html( " - Dedicación " + selected_politician.dedicacion)
+          .html( " - Dedicación: " + selected_politician.dedicacion)
     ;
 
     if (selected_politician.salario > 0){    
       breakdown.append("span")
-          .text(" - Salario ")
+          .text(" - Salario: ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
@@ -1141,7 +1157,7 @@ var CONGRESO = (function(jquery, _, d3){
 
     if (selected_politician.dietas > 0){    
       breakdown.append("span")
-          .text(" - Dietas ")
+          .text(" - Dietas: ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
@@ -1152,7 +1168,7 @@ var CONGRESO = (function(jquery, _, d3){
 
     if (selected_politician.viajes > 0){    
       breakdown.append("span")
-          .text(" - Dietas de viaje ")
+          .text(" - Dietas de viaje: ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
@@ -1163,7 +1179,7 @@ var CONGRESO = (function(jquery, _, d3){
 
     if (selected_politician.kilometraje > 0){      
       breakdown.append("span")
-          .text(" - Kilometraje ")
+          .text(" - Kilometraje: ")
       ;
       breakdown.append("strong")
           .style("font-size", "1.2em")
@@ -1174,7 +1190,7 @@ var CONGRESO = (function(jquery, _, d3){
     
     if (selected_politician.observaciones){      
       breakdown.append("span")
-         .text(selected_politician.observaciones)
+         .text(" - " + selected_politician.observaciones)
       ;
     }    
   };
