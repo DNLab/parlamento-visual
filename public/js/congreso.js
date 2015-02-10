@@ -152,6 +152,7 @@ var CONGRESO = (function(jquery, _, d3){
     ranking_list : null, // div element for containing ranking list
     ranking_filter : null, // ranking filter input box
     ranking_filter_submit : null, // ranking filter submit button
+    ranking_reset_submit: null,
     total_diagram : null, // for total salaries
     average_gender_diagram : null,
     average_group_diagram : null,
@@ -355,6 +356,7 @@ var CONGRESO = (function(jquery, _, d3){
     $.ranking_list = d3.select("div#ranking-list");
     $.ranking_filter = d3.select("input#ranking-filter");
     $.ranking_filter_submit = d3.select("span#ranking-filter-submit");
+    $.ranking_reset_submit = d3.select("span#ranking-reset-submit");    
     $.total_diagram = d3.select("div#total");
     $.average_gender_diagram = d3.select("div#average-gender");
     $.average_group_diagram = d3.select("div#average-group");
@@ -415,6 +417,14 @@ var CONGRESO = (function(jquery, _, d3){
         filterRanking(query);
       })
     ;
+
+    $.ranking_reset_submit
+      .on("click", function(d,i){
+        var query = '';
+        filterRanking(query);
+      })
+    ;
+
 
     // Initial Legends & Panels
     selectNav("nav-rank");
