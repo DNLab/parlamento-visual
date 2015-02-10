@@ -459,7 +459,7 @@ var CONGRESO = (function(jquery, _, d3){
     // Adjust ranking list height
     $.ranking_list
         .style("height", function(d,i){
-          var my_h =  parseInt($.H_chamber * 1.05);
+          var my_h =  parseInt($.H_chamber * 0.90);
           return my_h + "px";
         })
         .style("overflow-y", "auto")
