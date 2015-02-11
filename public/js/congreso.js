@@ -49,7 +49,7 @@ var CONGRESO = (function(jquery, _, d3){
       "Aralar-NaBai" : "#fa0",
       "No adscrito" : "#AE8558",
       "IU" : "#a0f",
-      "X" : "#000"
+      "X" : "#666"
     },
     SHORTEN_GROUP : {
       "UPN" : "UPN",
@@ -64,7 +64,7 @@ var CONGRESO = (function(jquery, _, d3){
     COLOR_GENDER : {
       "M" : "#f0f",
       "H" : "#0ff",
-      "X" : "#000",
+      "X" : "#666",
       "Tod@s" : "silver" //Both genders
     },
     EXTEND_GENDER : {
@@ -96,7 +96,7 @@ var CONGRESO = (function(jquery, _, d3){
       30000 : "#fee0d2",
       50000 : "#fc9272",
       60000 : "#de2d26",
-      'X' : "#000000"
+      'X' : "#666"
     },
     LEGEND_ID : [
       // This order has to match VIEW_ constants
@@ -697,7 +697,7 @@ var CONGRESO = (function(jquery, _, d3){
     .attr("cx", function (d) { return $.adjustCoords(40 + d.seat_coords[0]*1.9); })
     .attr("cy", function (d) { return $.adjustCoords(d.seat_coords[1]*1.9); })
     .attr("r", function (d) { return 10; })
-    .style("fill", function(d) { return "000"; });  
+    .style("fill", function(d) { return "#666"; });  
 
   }
 
