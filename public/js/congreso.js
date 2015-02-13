@@ -1199,8 +1199,7 @@ var CONGRESO = (function(jquery, _, d3){
     }
     
     if (selected_politician.observaciones){      
-      breakdown.append("span")
-         .text(" - " + selected_politician.observaciones)
+      breakdown.append("div").html(" " + selected_politician.observaciones)
       ;
     }    
   };
