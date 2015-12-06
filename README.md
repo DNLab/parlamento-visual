@@ -5,7 +5,7 @@ Examen visual por partido político, sexo, edad, domicilio, años de actividad p
 
 http://dnlab.github.io/parlamento-visual/public/embed.html
 
-Publicado en Diario de Navarra [1]
+[Publicado en Diario de Navarra] [1]
 
 La radiografía de los parlamentarios forales es una visualización interactiva elaborada a partir de una base de datos de elaboración propia. La complejidad  de crear una hoja de cálculo de este tipo estriba, principalmente, en que la información se encuentra en fuentes diversas y formatos diferentes. 
 
