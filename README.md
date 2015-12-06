@@ -2,7 +2,10 @@ Radiografía de lxs parlamentarixs forales
 =========================================
 Examen visual por partido político, sexo, edad, domicilio, años de actividad política y gastos en 2014
 ------------------------------------------------------------------------------------------------------
-http://especiales.diariodenavarra.es/parlamento/
+
+http://dnlab.github.io/parlamento-visual/public/embed.html
+
+Publicado en Diario de Navarra [1]
 
 La radiografía de los parlamentarios forales es una visualización interactiva elaborada a partir de una base de datos de elaboración propia. La complejidad  de crear una hoja de cálculo de este tipo estriba, principalmente, en que la información se encuentra en fuentes diversas y formatos diferentes. 
 
@@ -12,3 +15,4 @@ El trabajo de visualización fue elaborado a partir de un código de programaci�
 
 
 
+[1]: http://especiales.diariodenavarra.es/parlamento/
